@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>{{ category }}</title></head>
+<body>
+<h1>{{ category }}</h1>
+<ul>
+{% for book in books %}
+    <li>
+        {{ book.title }} ({{ book.format }}, {{ book.size // 1024 }} KB)
+        {% if book.link %}
+            - <a href="{{ book.link }}" target="_blank">下载</a>
+            {% if book.code %} (提取码: {{ book.code }}){% endif %}
+        {% else %}
+            - 无下载链接
+        {% endif %}
+        - <a href="/edit/{{ book.id }}">编辑</a>
+    </li>
+{% endfor %}
+</ul>
+<a href="/">返回首页</a>
+</body>
+</html>

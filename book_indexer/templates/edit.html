@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>编辑 {{ book.title }}</title></head>
+<body>
+<h1>编辑书籍信息</h1>
+<form method="POST">
+    <p>书名: {{ book.title }}</p>
+    <label>123 云盘链接: <input type="text" name="link" value="{{ book.link }}"></label><br><br>
+    <label>提取码: <input type="text" name="code" value="{{ book.code }}"></label><br><br>
+    <button type="submit">保存</button>
+</form>
+<a href="/">返回首页</a>
+</body>
+</html>
